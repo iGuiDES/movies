@@ -1,0 +1,36 @@
+.header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 22px;
+}
+
+.headerRow {
+    display: flex;
+    align-items: center;
+}
+
+.headerWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.headerLogo, .headerMenu {
+    width: 50%;
+}
+
+.menuLinks {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+}
+
+.menuLink {
+    padding: 10px 20px;
+}
+
+.logo {
+    color: deepskyblue;
+    text-decoration: none;
+}
