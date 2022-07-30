@@ -16,10 +16,12 @@ const MoviesList = () => {
     }, [dispatch]);
 
     return (
-        <div className={css.wrapper}>
-            {
-                movies.map(movie => <MoviesListCard key={movie.id} movie={movie} />)
-            }
+        <div className={css.wrapper}s>
+            <div className={css.cards}>
+                {
+                    movies.map(movie => <MoviesListCard key={movie.id} movie={movie} />)
+                }
+            </div>
         </div>
     )
 }
