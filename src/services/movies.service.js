@@ -3,7 +3,7 @@ import {axiosService} from "./axios.service";
 import {urls} from "../constants";
 
 const moviesService = {
-    getMovies: () => axiosService.get(urls.movies),
+    getMovies: (page) => axiosService.get(urls.movies, {params: {page}}),
 };
 
 export {

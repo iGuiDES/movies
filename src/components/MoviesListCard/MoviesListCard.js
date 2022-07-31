@@ -17,3 +17,4 @@ const MoviesListCard = ({movie}) => {
 export {
     MoviesListCard
 }
+

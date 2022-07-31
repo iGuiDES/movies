@@ -4,17 +4,16 @@ import {moviesService} from "../../services";
 
 const initialState = {
     movies: [],
-    page: 1,
-    next: null,
+    error: null,
     prev: null,
-    error: null
+    next: null
 };
 
 const getMovies = createAsyncThunk(
     'movieSlice/getMovies',
-    async (_, {rejectedWithValue}) => {
+    async ({page}, {rejectedWithValue, dispatch, getState}) => {
         try {
-            const {data} = await moviesService.getMovies();
+            const {data} = await moviesService.getMovies(page);
             return data;
         } catch (e) {
             return rejectedWithValue(e.response.data);
@@ -31,11 +30,11 @@ const movieSlice = createSlice({
             .addCase(getMovies.fulfilled, (state, action) => {
                 state.error = null;
                 state.movies = action.payload.results;
-                state.page = action.payload.page;
+                state.prev = action.payload.page;
+                state.next = action.payload.page;
             })
             .addDefaultCase((state, action) => {
                 const [type] = action.type.split('/').splice(-1);
-
                 if (type === 'rejected') {
                     state.error = action.payload;
                 } else {
