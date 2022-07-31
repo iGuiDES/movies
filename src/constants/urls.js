@@ -1,10 +1,10 @@
 import {APIKey} from "./apikey";
 
-const baseURL = 'https://api.themoviedb.org/3';
+const baseURL = 'https://api.themoviedb.org/';
 
 const urls = {
-    movies: `/discover/movie/${APIKey.apikey}`,
-    genres: `genre/movie/list/${APIKey.apikey}`
+    movies: '/3/discover/movie/',
+    genres: '/genre/movie/list'
 }
 
 const linkImages = 'https://www.themoviedb.org/t/p/w1280/'

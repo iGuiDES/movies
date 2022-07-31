@@ -31,7 +31,6 @@ const movieSlice = createSlice({
             .addCase(getMovies.fulfilled, (state, action) => {
                 state.error = null;
                 state.movies = action.payload.results;
-                state.page = action.payload.page;
             })
             .addDefaultCase((state, action) => {
                 const [type] = action.type.split('/').splice(-1);
